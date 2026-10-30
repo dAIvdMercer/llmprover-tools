@@ -15,6 +15,7 @@ you where to go.
 | Tool | What it does | Try it (no install) |
 |------|--------------|---------------------|
 | [Model Compare](tools/compare) | Ask one question of two AI models (with your own keys) and see their answers, cost, and speed side by side. | [Open in Colab ▶](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/compare/compare.ipynb) |
+| [Context A/B Tester](tools/context-ab) | Ask one model one question two ways (with vs without your document, or context A vs B) and watch how the context changes the answer. | [Open in Colab ▶](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/context-ab/context_ab.ipynb) |
 
 **New to this / not a programmer?** Click "Open in Colab" above — it runs in your browser, no
 install, and walks you through each step. Open the tool's own page (the tool name link) for a plain

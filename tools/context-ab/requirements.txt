@@ -1,0 +1,4 @@
+# Context A/B Tester -- provider SDKs. Install only the one your model needs.
+# openai covers OpenAI, and (via base_url) Gemini / Grok / Together / Groq.
+openai>=1.0
+anthropic>=0.30
