@@ -54,9 +54,13 @@ uvx llmprover-variance --model gpt-5 \
 # run it 8 times:
 uvx llmprover-variance --model gpt-5 --prompt "..." --runs 8
 
-# sweep temperatures (one run each):
+# sweep temperatures (one run each; values 0-2, overrides --runs):
 uvx llmprover-variance --model gpt-5 --prompt "..." --temperatures 0,0.5,1.0
 ```
+
+`--temperatures` takes a comma-separated list of values between **0** (most focused/repeatable) and
+**2** (most varied); it runs the prompt once per value and overrides `--runs`. Values above 2 are
+rejected with a clear message. The list still counts toward the 10-run maximum.
 
 Or clone and run:
 

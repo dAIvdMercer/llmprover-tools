@@ -69,9 +69,19 @@ PAID_UPGRADE_CAPABILITIES = [
 # not a free quick look. The cap is on CALL COUNT, not quality.
 MAX_RUNS = 10
 
+# Temperature range accepted by the mainstream providers (OpenAI, Anthropic, and the
+# OpenAI-compatible ones). Values outside this would 400 at the provider; we reject them up front
+# with a clear message instead of a per-run provider error.
+TEMP_MIN = 0.0
+TEMP_MAX = 2.0
+
 
 class RunCountError(ValueError):
     """Raised when the requested run count exceeds the free capability cap."""
+
+
+class TemperatureError(ValueError):
+    """Raised when a requested temperature is outside the provider-accepted range."""
 
 
 # ---------------------------------------------------------------------------
@@ -298,7 +308,16 @@ def variance_core(
                   identical calls are made at the provider default temperature.
     """
     if temperatures:
-        call_specs = [(i, float(t)) for i, t in enumerate(temperatures)]
+        temps = [float(t) for t in temperatures]
+        bad = [t for t in temps if t < TEMP_MIN or t > TEMP_MAX]
+        if bad:
+            raise TemperatureError(
+                f"Temperature(s) {bad} are outside the accepted range {TEMP_MIN}-{TEMP_MAX}. "
+                f"Temperature controls how much the model varies: {TEMP_MIN} is the most focused "
+                f"and repeatable, {TEMP_MAX} is the most varied. Most providers reject values above "
+                f"{TEMP_MAX}. Pick values within {TEMP_MIN}-{TEMP_MAX}, e.g. [0, 0.5, 1.0]."
+            )
+        call_specs = [(i, t) for i, t in enumerate(temps)]
     else:
         call_specs = [(i, None) for i in range(runs)]
 

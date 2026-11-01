@@ -25,7 +25,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from variance_core import RunCountError, format_result, variance_core
+from variance_core import RunCountError, TemperatureError, format_result, variance_core
 
 
 def _read_prompt(path: str | None, inline: str | None) -> str:
@@ -54,7 +54,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--prompt", help="The prompt to run, inline.")
     p.add_argument("--prompt-file", help="Read the prompt from this file.")
     p.add_argument("--runs", type=int, default=5, help="How many times to run (default 5, max 10).")
-    p.add_argument("--temperatures", help="Comma-separated temperatures to sweep (one run each), e.g. 0,0.5,1.0.")
+    p.add_argument("--temperatures", help="Comma-separated temperatures to sweep (one run each), "
+                                          "range 0-2, e.g. 0,0.5,1.0. Overrides --runs.")
     p.add_argument("--max-tokens", type=int, default=1024)
     args = p.parse_args(argv)
 
@@ -68,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
             temperatures=_parse_temps(args.temperatures),
             max_tokens=args.max_tokens,
         )
-    except RunCountError as exc:
+    except (RunCountError, TemperatureError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 
