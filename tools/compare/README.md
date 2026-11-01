@@ -88,7 +88,7 @@ so the tool never calls home.
 no score, no winner, no "which is better". You read the two answers and judge for yourself.
 
 When you want to compare 5-20 models at once, score which is best, see *which layer* broke, track
-drift over time, or run this inside an AI agent, that is [LLM Prover](https://llmprover.pysolvr.com).
+drift over time, or run this inside an AI agent, that is [LLM Prover](https://llmprover.pysolvr.com/?tool=compare).
 
 ## Your keys stay with you
 

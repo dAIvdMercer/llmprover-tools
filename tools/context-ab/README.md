@@ -83,7 +83,7 @@ the two answers and judge for yourself.
 
 When you want scored grounding across a whole document store (thousands of docs, retrieved at scale),
 the which-layer diagnostic, and drift tracking over time, that is
-[LLM Prover](https://llmprover.pysolvr.com/rag-evaluation/).
+[LLM Prover](https://llmprover.pysolvr.com/rag-evaluation/?tool=context-ab).
 
 ## Your keys stay with you
 

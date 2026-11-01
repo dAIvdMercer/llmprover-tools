@@ -88,7 +88,7 @@ model is stable enough for your use. You read the spread and judge for yourself.
 
 A single judge pass can be inconsistent too (verdicts can flip on re-run). When you want consistency
 that is *scored* with a reliability-checked judge, the which-layer diagnostic, and drift tracked over
-time, that is [LLM Prover](https://llmprover.pysolvr.com). Background on scoring and why a single pass is
+time, that is [LLM Prover](https://llmprover.pysolvr.com/?tool=variance). Background on scoring and why a single pass is
 unreliable: [the scoring guide](https://llmprover.pysolvr.com/guides/scoring-guide/).
 
 ## Your keys stay with you
