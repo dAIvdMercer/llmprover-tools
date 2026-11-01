@@ -6,7 +6,7 @@ Fire **one prompt at two AI models** you choose, using **your own API keys**, an
 cost, and speed **side by side**. About a minute, free, no signup. It works with whatever models your
 key can reach, so it never goes out of date.
 
-A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.com).
+A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 
 ---
 
@@ -43,8 +43,8 @@ You need a key for **each** provider whose model you want to compare (so for "GP
 need an OpenAI key and an Anthropic key). Most providers require a small amount of prepaid credit.
 **Your key stays with you** — it is never sent to pysolvr (see "Your keys stay with you" below).
 
-Not sure which models exist or what they cost? See **[llmprover.com/models](https://llmprover.com/models/)**
-and **[llmprover.com/api-pricing](https://llmprover.com/api-pricing/)**.
+Not sure which models exist or what they cost? See **[llmprover.pysolvr.com/models](https://llmprover.pysolvr.com/models/)**
+and **[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/)**.
 
 ## Run it in a terminal (for developers)
 
@@ -88,7 +88,7 @@ so the tool never calls home.
 no score, no winner, no "which is better". You read the two answers and judge for yourself.
 
 When you want to compare 5-20 models at once, score which is best, see *which layer* broke, track
-drift over time, or run this inside an AI agent, that is [LLM Prover](https://llmprover.com).
+drift over time, or run this inside an AI agent, that is [LLM Prover](https://llmprover.pysolvr.com).
 
 ## Your keys stay with you
 
@@ -104,7 +104,7 @@ commit. If a key ever does end up somewhere public, delete it and create a new o
 
 `prices.json` is a dated snapshot (`prices_as_of`), not a live feed. You can edit it locally for any
 model it does not list. For the current, authoritative table see
-**[llmprover.com/api-pricing](https://llmprover.com/api-pricing/)**.
+**[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/)**.
 
 ## Legal
 

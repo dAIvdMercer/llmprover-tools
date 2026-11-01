@@ -10,7 +10,7 @@ side by side:
 
 About a minute, free, no signup. Works with whatever model your key can reach.
 
-A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.com).
+A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 
 ---
 
@@ -37,8 +37,8 @@ model).
 | Google (Gemini) | aistudio.google.com \u2192 Get API key | `gemini-4-argon` |
 
 **Your key stays with you** \u2014 it is never sent to pysolvr. Not sure what models exist or cost? See
-[llmprover.com/models](https://llmprover.com/models/) and
-[llmprover.com/api-pricing](https://llmprover.com/api-pricing/).
+[llmprover.pysolvr.com/models](https://llmprover.pysolvr.com/models/) and
+[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/).
 
 ## Run it in a terminal (for developers)
 
@@ -83,7 +83,7 @@ the two answers and judge for yourself.
 
 When you want scored grounding across a whole document store (thousands of docs, retrieved at scale),
 the which-layer diagnostic, and drift tracking over time, that is
-[LLM Prover](https://llmprover.com/rag-evaluation/).
+[LLM Prover](https://llmprover.pysolvr.com/rag-evaluation/).
 
 ## Your keys stay with you
 
@@ -95,7 +95,7 @@ key ends up somewhere public, delete it at the provider and create a new one ("r
 ## Prices drift
 
 `prices.json` is a dated snapshot (`prices_as_of`), not a live feed. For the current table see
-[llmprover.com/api-pricing](https://llmprover.com/api-pricing/).
+[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/).
 
 ## Legal
 

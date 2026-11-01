@@ -12,8 +12,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://llmprover.com"
-"Scoring guide" = "https://llmprover.com/guides/scoring-guide/"
+Homepage = "https://llmprover.pysolvr.com"
+"Scoring guide" = "https://llmprover.pysolvr.com/guides/scoring-guide/"
 Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/variance"
 
 [project.scripts]

@@ -42,9 +42,9 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 
 MODEL_CAP = 2
-UPGRADE_URL = "https://llmprover.com"
-PRICING_URL = "https://llmprover.com/api-pricing/"
-MODELS_HELP_URL = "https://llmprover.com/models/"
+UPGRADE_URL = "https://llmprover.pysolvr.com"
+PRICING_URL = "https://llmprover.pysolvr.com/api-pricing/"
+MODELS_HELP_URL = "https://llmprover.pysolvr.com/models/"
 
 # The paid capabilities this free tool withholds, named verbatim for the result line.
 PAID_UPGRADE_CAPABILITIES = [

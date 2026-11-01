@@ -10,7 +10,7 @@ checked: ask the same question five times and you can get five different answers
 Run them at one temperature, or sweep a few, and look at the spread. About a minute, free, no
 signup. Works with whatever model your key can reach.
 
-A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.com).
+A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 
 ---
 
@@ -37,8 +37,8 @@ provider's key (this tool runs a single model).
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
 **Your key stays with you.** It is never sent to pysolvr. Not sure what models exist or cost? See
-[llmprover.com/models](https://llmprover.com/models/) and
-[llmprover.com/api-pricing](https://llmprover.com/api-pricing/).
+[llmprover.pysolvr.com/models](https://llmprover.pysolvr.com/models/) and
+[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/).
 
 ## Run it in a terminal (for developers)
 
@@ -84,8 +84,8 @@ model is stable enough for your use. You read the spread and judge for yourself.
 
 A single judge pass can be inconsistent too (verdicts can flip on re-run). When you want consistency
 that is *scored* with a reliability-checked judge, the which-layer diagnostic, and drift tracked over
-time, that is [LLM Prover](https://llmprover.com). Background on scoring and why a single pass is
-unreliable: [the scoring guide](https://llmprover.com/guides/scoring-guide/).
+time, that is [LLM Prover](https://llmprover.pysolvr.com). Background on scoring and why a single pass is
+unreliable: [the scoring guide](https://llmprover.pysolvr.com/guides/scoring-guide/).
 
 ## Your keys stay with you
 
@@ -97,7 +97,7 @@ key ends up somewhere public, delete it at the provider and create a new one ("r
 ## Prices drift
 
 `prices.json` is a dated snapshot (`prices_as_of`), not a live feed. For the current table see
-[llmprover.com/api-pricing](https://llmprover.com/api-pricing/).
+[llmprover.pysolvr.com/api-pricing](https://llmprover.pysolvr.com/api-pricing/).
 
 ## Legal
 

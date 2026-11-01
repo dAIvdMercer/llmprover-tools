@@ -47,10 +47,10 @@ from typing import Optional
 # Constants + stable links
 # ---------------------------------------------------------------------------
 
-UPGRADE_URL = "https://llmprover.com"
-PRICING_URL = "https://llmprover.com/api-pricing/"
-MODELS_HELP_URL = "https://llmprover.com/models/"
-RAG_EVAL_URL = "https://llmprover.com/rag-evaluation/"  # the public twin (F3)
+UPGRADE_URL = "https://llmprover.pysolvr.com"
+PRICING_URL = "https://llmprover.pysolvr.com/api-pricing/"
+MODELS_HELP_URL = "https://llmprover.pysolvr.com/models/"
+RAG_EVAL_URL = "https://llmprover.pysolvr.com/rag-evaluation/"  # the public twin (F3)
 
 # The paid capabilities this free tool withholds, named plainly for the result line.
 PAID_UPGRADE_CAPABILITIES = [

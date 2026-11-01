@@ -12,8 +12,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://llmprover.com"
-"RAG evaluation" = "https://llmprover.com/rag-evaluation/"
+Homepage = "https://llmprover.pysolvr.com"
+"RAG evaluation" = "https://llmprover.pysolvr.com/rag-evaluation/"
 Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/context-ab"
 
 [project.scripts]

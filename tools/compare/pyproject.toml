@@ -12,8 +12,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://llmprover.com"
-Pricing = "https://llmprover.com/api-pricing/"
+Homepage = "https://llmprover.pysolvr.com"
+Pricing = "https://llmprover.pysolvr.com/api-pricing/"
 Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/compare"
 
 [project.scripts]

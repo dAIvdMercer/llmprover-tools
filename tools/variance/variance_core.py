@@ -52,10 +52,10 @@ from typing import Optional
 # Constants + stable links
 # ---------------------------------------------------------------------------
 
-UPGRADE_URL = "https://llmprover.com"
-PRICING_URL = "https://llmprover.com/api-pricing/"
-MODELS_HELP_URL = "https://llmprover.com/models/"
-SCORING_HELP_URL = "https://llmprover.com/guides/scoring-guide/"  # the knowledge-gap content link
+UPGRADE_URL = "https://llmprover.pysolvr.com"
+PRICING_URL = "https://llmprover.pysolvr.com/api-pricing/"
+MODELS_HELP_URL = "https://llmprover.pysolvr.com/models/"
+SCORING_HELP_URL = "https://llmprover.pysolvr.com/guides/scoring-guide/"  # the knowledge-gap content link
 
 # The paid capabilities this free tool withholds, named plainly for the result line.
 PAID_UPGRADE_CAPABILITIES = [
