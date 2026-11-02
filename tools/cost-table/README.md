@@ -18,11 +18,14 @@ live pricing table at [llmprover.pysolvr.com/api-pricing](https://llmprover.pyso
 ## Not a programmer? Start here (no installing anything)
 
 Run it in your browser with **Google Colab** in under a minute. No install, no code, and no API key.
+It comes **pre-filled with a demonstration workload**, so your very first run already shows the point:
+the same workload can cost tens of dollars a month on a cheap model and thousands on an expensive one.
 
 1. **Click this button:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/cost-table/cost_table.ipynb)
-2. **Run each grey box top to bottom** with its play (>) button.
-3. The page asks for two numbers (how many tokens in, how many tokens out) and shows the cost of that
-   run on every model, cheapest first.
+2. **Run each grey box top to bottom** with its play (>) button. The first run uses the pre-filled
+   demonstration workload.
+3. Then overwrite the two numbers (how many tokens in, how many tokens out) with your own and re-run
+   to see the cost of *your* workload on every model, cheapest first.
 
 ## No API key needed
 
@@ -45,9 +48,13 @@ Not sure what models exist or what they cost today? See
 
 ## Run it in a terminal (for developers)
 
-No keys, no environment variables. Just the token counts.
+No keys, no environment variables. Just the token counts. Run it with no arguments for the curated
+demonstration workload.
 
 ```bash
+# run the demonstration default (realistic workload + monthly projection):
+uvx llmprover-cost-table
+
 # cost one run across every model in the snapshot:
 uvx llmprover-cost-table --input-tokens 1200 --output-tokens 400
 
