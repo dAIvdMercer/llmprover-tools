@@ -1,0 +1,3 @@
+# Cost Table -- no dependencies. It is pure arithmetic over a static price snapshot and the token
+# counts you supply. It makes no provider calls and needs no API key, so there are no SDKs to install.
+# Python 3.9+ standard library only.

@@ -1,0 +1,27 @@
+[project]
+name = "llmprover-cost-table"
+version = "0.1.0"
+description = "What does your workload cost on each model? Enter input/output token counts and see the cost across every model in a dated price snapshot, cheapest first. Pure arithmetic, no API key, no recommendation. Free."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "pysolvr" }]
+dependencies = []
+
+[project.urls]
+Homepage = "https://llmprover.pysolvr.com"
+"Live pricing table" = "https://llmprover.pysolvr.com/api-pricing/"
+Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/cost-table"
+
+[project.scripts]
+llmprover-cost-table = "cost_table:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["cost_table", "cost_table_core"]
+
+[tool.setuptools.package-data]
+"*" = ["prices.json"]
