@@ -1,0 +1,31 @@
+[project]
+name = "llmprover-json-reliability"
+version = "0.1.0"
+description = "Fire the same request at one model N times and measure how reliably it returns valid, schema-matching JSON -- a mechanical schema pass rate, no quality verdict. Free, own-key, provider-direct."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "pysolvr" }]
+dependencies = [
+    "openai>=1.0",
+    "anthropic>=0.30",
+    "jsonschema>=4.0",
+]
+
+[project.urls]
+Homepage = "https://llmprover.pysolvr.com"
+"Scoring guide" = "https://llmprover.pysolvr.com/guides/scoring-guide/"
+Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/json-reliability"
+
+[project.scripts]
+llmprover-json-reliability = "json_reliability:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["json_reliability", "json_reliability_core"]
+
+[tool.setuptools.package-data]
+"*" = ["prices.json"]

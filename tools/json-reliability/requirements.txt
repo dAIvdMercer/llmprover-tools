@@ -1,0 +1,8 @@
+# JSON / Structured-Output Reliability -- provider SDKs + schema validation.
+# openai covers OpenAI, and (via base_url) Gemini / Grok / Together / Groq.
+openai>=1.0
+anthropic>=0.30
+# jsonschema validates responses against your JSON Schema. If it is not installed the tool still
+# runs with a minimal structural fallback (top-level type + required keys), but installing it gives
+# full schema checking.
+jsonschema>=4.0
