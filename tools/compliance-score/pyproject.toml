@@ -1,0 +1,30 @@
+[project]
+name = "llmprover-compliance-score"
+version = "0.1.0"
+description = "Paste your reference documentation and your own draft, and get a single-pass read of which points are supported, missing, or contradicted. A review aid for 'does my draft comply?', not a certification. Free, own-key, provider-direct."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "pysolvr" }]
+dependencies = [
+    "openai>=1.0",
+    "anthropic>=0.30",
+]
+
+[project.urls]
+Homepage = "https://llmprover.pysolvr.com"
+"Scoring guide" = "https://llmprover.pysolvr.com/guides/scoring-guide/"
+Source = "https://github.com/dAIvdMercer/llmprover-tools/tree/main/tools/compliance-score"
+
+[project.scripts]
+llmprover-compliance-score = "compliance_score:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["compliance_score", "compliance_score_core"]
+
+[tool.setuptools.package-data]
+"*" = ["prices.json"]
