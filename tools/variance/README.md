@@ -16,12 +16,16 @@ A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 
 ## Not a programmer? Start here (no installing anything)
 
-Run it in your browser with **Google Colab** in about a minute. No install, no code.
+Run it in your browser with **Google Colab** in about a minute. No install, no code. It comes
+**pre-filled with a demonstration default** (one open-ended prompt at temperature 0 vs temperature 1),
+so your first run already shows the point: the consistency number stays high at temperature 0 and
+drops at temperature 1. That is the temperature dial, measured.
 
 1. **Click this button:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/variance/variance.ipynb)
-2. **Run each grey box top to bottom** with its play (>) button.
-3. The page walks you through adding your API key safely, choosing a model, and typing your prompt.
-   The last step runs it several times and shows the responses with a consistency read.
+2. **Run each grey box top to bottom** with its play (>) button. The first run uses the pre-filled
+   demonstration prompt and temperatures.
+3. The page walks you through adding your API key safely. Then overwrite the model, prompt, and
+   temperatures with your own and re-run.
 
 ## What you need: an API key (and what that is)
 
@@ -47,7 +51,10 @@ Keys are read from environment variables, never from a flag or a file in the rep
 ```bash
 export OPENAI_API_KEY=sk-...
 
-# run the same prompt 5 times (default):
+# run the demonstration default (temp 0 vs temp 1 on an open-ended prompt):
+uvx llmprover-variance
+
+# run the same prompt 5 times:
 uvx llmprover-variance --model gpt-5 \
     --prompt "Name one risk of deploying this model to production."
 

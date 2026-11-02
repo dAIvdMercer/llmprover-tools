@@ -16,12 +16,16 @@ A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 
 ## Not a programmer? Start here (no installing anything)
 
-Run it in your browser with **Google Colab** in about a minute \u2014 no install, no code.
+Run it in your browser with **Google Colab** in about a minute \u2014 no install, no code. It comes
+**pre-filled with a demonstration default** (an everyday expense-policy question and a short policy),
+so your first run already shows the point: read the answer cold and then with the policy pasted in,
+and see for yourself how the pasted document settles it.
 
 1. **Click this button:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/context-ab/context_ab.ipynb)
-2. **Run each grey box top to bottom** with its play (\u25b6) button.
-3. The page walks you through adding your API key safely, choosing a model, and pasting your question
-   and your document. The last step shows the two answers side by side.
+2. **Run each grey box top to bottom** with its play (\u25b6) button. The first run uses the pre-filled
+   demonstration question and document.
+3. The page walks you through adding your API key safely. Then overwrite the question and the document
+   with your own and re-run to see the two answers side by side for *your* case.
 
 ## What you need: an API key (and what that is)
 
@@ -47,7 +51,10 @@ Keys are read from environment variables \u2014 never from a flag or a file in t
 ```bash
 export OPENAI_API_KEY=sk-...
 
-# with vs without context (default):
+# run the demonstration default (everyday policy question, cold vs with a pasted policy):
+uvx llmprover-context-ab
+
+# with vs without context:
 uvx llmprover-context-ab --model gpt-5 \
     --question "Can I expense a 1,200 USD laptop without approval?" \
     --context-file policy.txt

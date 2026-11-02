@@ -15,12 +15,17 @@ A free, own-key tool by [pysolvr / LLM Prover](https://llmprover.pysolvr.com).
 You can run this in your browser with **Google Colab** in about a minute. You do not need to install
 anything or know how to code.
 
+It comes **pre-filled with a demonstration default** (a cheap model vs a flagship on one everyday
+question), so your first run already shows the point: the two answers side by side with their cost
+and speed, so you can see the price and speed gap.
+
 1. **Click this button:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dAIvdMercer/llmprover-tools/blob/main/tools/compare/compare.ipynb)
    It opens the tool in your browser (a free Google account is all you need).
 2. **Follow the numbered steps in the page.** Each grey box is a step: click the little
-   **play (▶) button** on the left of a box to run it, top to bottom.
-3. The page walks you through adding your API keys safely, choosing two models, and typing your
-   question. The last step shows the two answers side by side.
+   **play (▶) button** on the left of a box to run it, top to bottom. The first run uses the
+   pre-filled demonstration models and question.
+3. The page walks you through adding your API keys safely. Then overwrite the two models and the
+   question with your own and re-run to see *your* head-to-head, side by side.
 
 That is the whole thing. The rest of this page is for people who prefer a terminal.
 
@@ -56,6 +61,10 @@ Two ways. Both read your keys from environment variables — never from a file i
 export OPENAI_API_KEY=sk-...            # set keys for the two providers you're comparing
 export ANTHROPIC_API_KEY=sk-ant-...
 
+# run the demonstration default (cheap vs flagship on an everyday question):
+uvx llmprover-compare
+
+# your own head-to-head:
 uvx llmprover-compare --models gpt-5,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
 # or:  pipx run llmprover-compare --models gpt-5,claude-opus-5-5 --prompt "..."
 ```

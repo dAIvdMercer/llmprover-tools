@@ -16,6 +16,13 @@ Keys are read from environment variables (never a flag/file). Keys stay on your 
   # read the prompt from a file:
   python variance.py --model claude-sonnet-5-5 --prompt-file prompt.txt
 
+Run it with NO arguments and it uses a curated demonstration default: the same open-ended prompt run
+at temperature 0 vs temperature 1, so the first run shows how the temperature dial changes the
+wording spread (the mechanical consistency number). Overwrite the defaults freely.
+
+  # run the demonstration default (temp 0 vs temp 1):
+  python variance.py
+
 Set the key env var for your model's provider:
   OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, XAI_API_KEY, TOGETHER_API_KEY, GROQ_API_KEY
 """
@@ -26,6 +33,14 @@ import argparse
 import sys
 
 from variance_core import RunCountError, TemperatureError, format_result, variance_core
+
+# Demonstration default (Step 1b): one open-ended prompt (room to vary) run at temperature 0 vs
+# temperature 1. The mechanical consistency read (wording overlap) shows the temp-0 pair far more
+# alike than the temp-1 pair -- the lesson is entirely in the numbers, never a verdict, and it is a
+# durable truth about the temperature dial (not a model quirk). Lives in the CLI wrapper defaults.
+DEFAULT_MODEL = "gpt-4o-mini"
+DEFAULT_PROMPT = "Give me a one-sentence tagline for a new coffee shop."
+DEFAULT_TEMPERATURES = "0,0,1,1"  # two runs at temp 0, two at temp 1 -- spread visible within each
 
 
 def _read_prompt(path: str | None, inline: str | None) -> str:
@@ -48,9 +63,10 @@ def _parse_temps(raw: str | None) -> list | None:
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        description="Run one prompt at one model N times and report the spread (no quality verdict)."
+        description="Run one prompt at one model N times and report the spread (no quality verdict). "
+                    "With no arguments, runs a curated demonstration default."
     )
-    p.add_argument("--model", required=True, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
     p.add_argument("--prompt", help="The prompt to run, inline.")
     p.add_argument("--prompt-file", help="Read the prompt from this file.")
     p.add_argument("--runs", type=int, default=5, help="How many times to run (default 5, max 10).")
@@ -59,14 +75,29 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--max-tokens", type=int, default=1024)
     args = p.parse_args(argv)
 
-    prompt = _read_prompt(args.prompt_file, args.prompt)
+    # No model and no prompt -> run the curated demonstration default (temp 0 vs temp 1) so the first
+    # run teaches the temperature lesson instead of erroring on empty input.
+    using_demo = args.model is None and args.prompt is None and args.prompt_file is None
+    if using_demo:
+        model = DEFAULT_MODEL
+        prompt = DEFAULT_PROMPT
+        temperatures = _parse_temps(DEFAULT_TEMPERATURES)
+        print("(no input given -- running the demonstration default: one open-ended prompt at "
+              "temperature 0 (x2) vs temperature 1 (x2). Watch the wording overlap stay high at "
+              "temp 0 and drop at temp 1. Pass --model / --prompt to use your own.)\n")
+    else:
+        if args.model is None:
+            raise SystemExit("error: --model is required (or pass no arguments to run the demo default)")
+        model = args.model
+        prompt = _read_prompt(args.prompt_file, args.prompt)
+        temperatures = _parse_temps(args.temperatures)
 
     try:
         result = variance_core(
             prompt=prompt,
-            model=args.model,
+            model=model,
             runs=args.runs,
-            temperatures=_parse_temps(args.temperatures),
+            temperatures=temperatures,
             max_tokens=args.max_tokens,
         )
     except (RunCountError, TemperatureError) as exc:
