@@ -36,7 +36,7 @@ provider's key (this tool runs a single model).
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
@@ -55,14 +55,14 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-variance
 
 # run the same prompt 5 times:
-uvx llmprover-variance --model gpt-5 \
+uvx llmprover-variance --model gpt-5.1 \
     --prompt "Name one risk of deploying this model to production."
 
 # run it 8 times:
-uvx llmprover-variance --model gpt-5 --prompt "..." --runs 8
+uvx llmprover-variance --model gpt-5.1 --prompt "..." --runs 8
 
 # sweep temperatures (one run each; values 0-2, overrides --runs):
-uvx llmprover-variance --model gpt-5 --prompt "..." --temperatures 0,0.5,1.0
+uvx llmprover-variance --model gpt-5.1 --prompt "..." --temperatures 0,0.5,1.0
 ```
 
 `--temperatures` takes a comma-separated list of values between **0** (most focused/repeatable) and
@@ -76,7 +76,7 @@ git clone https://github.com/dAIvdMercer/llmprover-tools
 cd llmprover-tools/tools/variance
 pip install -r requirements.txt
 export OPENAI_API_KEY=sk-...
-python variance.py --model gpt-5 --prompt "..." --runs 5
+python variance.py --model gpt-5.1 --prompt "..." --runs 5
 ```
 
 Key environment variables by provider: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`,

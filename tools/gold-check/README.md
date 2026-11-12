@@ -41,7 +41,7 @@ answering model and the checking model are from the same provider.
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
@@ -60,10 +60,10 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-gold-check
 
 # your own:
-uvx llmprover-gold-check --model gpt-5 \
+uvx llmprover-gold-check --model gpt-5.1 \
     --question "In how many days must a customer request a refund?" \
     --reference "Within 14 days of delivery; later requests are not eligible." \
-    --judge-model gpt-5
+    --judge-model gpt-5.1
 ```
 
 Or clone and run:

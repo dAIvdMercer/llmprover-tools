@@ -5,13 +5,13 @@ cost and latency, and a mechanical consistency (wording-overlap) read. No qualit
 Keys are read from environment variables (never a flag/file). Keys stay on your machine.
 
   # run the same prompt 5 times (default):
-  python variance.py --model gpt-5 --prompt "Name one risk of deploying this model."
+  python variance.py --model gpt-5.1 --prompt "Name one risk of deploying this model."
 
   # run it 8 times:
-  python variance.py --model gpt-5 --prompt "..." --runs 8
+  python variance.py --model gpt-5.1 --prompt "..." --runs 8
 
   # sweep temperatures (one run each):
-  python variance.py --model gpt-5 --prompt "..." --temperatures 0,0.5,1.0
+  python variance.py --model gpt-5.1 --prompt "..." --temperatures 0,0.5,1.0
 
   # read the prompt from a file:
   python variance.py --model claude-sonnet-5-5 --prompt-file prompt.txt
@@ -66,7 +66,7 @@ def main(argv: list[str] | None = None) -> int:
         description="Run one prompt at one model N times and report the spread (no quality verdict). "
                     "With no arguments, runs a curated demonstration default."
     )
-    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5.1 (provider inferred).")
     p.add_argument("--prompt", help="The prompt to run, inline.")
     p.add_argument("--prompt-file", help="Read the prompt from this file.")
     p.add_argument("--runs", type=int, default=5, help="How many times to run (default 5, max 10).")

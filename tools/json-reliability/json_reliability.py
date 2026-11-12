@@ -13,11 +13,11 @@ numbers, never a verdict the tool emits.
   python json_reliability.py
 
   # your own: N runs of one request, checked against a schema file:
-  python json_reliability.py --model gpt-5 --runs 10 \
+  python json_reliability.py --model gpt-5.1 --runs 10 \
       --prompt "Extract name and age as JSON." --schema-file person.schema.json
 
   # parse-only check (no schema):
-  python json_reliability.py --model gpt-5 --runs 10 --prompt "Return a JSON array of 3 colors."
+  python json_reliability.py --model gpt-5.1 --runs 10 --prompt "Return a JSON array of 3 colors."
 
 Set the key env var for your model's provider:
   OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, XAI_API_KEY, TOGETHER_API_KEY, GROQ_API_KEY
@@ -96,7 +96,7 @@ def main(argv=None) -> int:
         description="Measure how reliably a model returns valid, schema-matching JSON (schema pass "
                     "rate, no quality verdict). With no arguments, runs a curated demonstration default."
     )
-    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5.1 (provider inferred).")
     p.add_argument("--prompt", default=None, help="The request (should ask for JSON).")
     p.add_argument("--prompt-file", help="Read the prompt from this file.")
     p.add_argument("--runs", type=int, default=DEFAULT_RUNS, help="How many runs (default 6, max 10).")

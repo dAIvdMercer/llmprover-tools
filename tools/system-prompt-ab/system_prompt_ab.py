@@ -12,7 +12,7 @@ and cost more for the same answer. The lesson is the token and cost numbers, nev
   python system_prompt_ab.py
 
   # your own: one question under two system prompts:
-  python system_prompt_ab.py --model gpt-5 \
+  python system_prompt_ab.py --model gpt-5.1 \
       --prompt "How do I reset my password?" \
       --system "You are a helpful assistant." \
       --system "You are a support agent. Answer in at most 3 short steps. No preamble."
@@ -48,7 +48,7 @@ def main(argv=None) -> int:
         description="Run one prompt at one model under two or more system prompts, side by side "
                     "(token cost + latency, no verdict). With no arguments, runs a demonstration default."
     )
-    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5.1 (provider inferred).")
     p.add_argument("--prompt", default=None, help="The user prompt, held constant across system prompts.")
     p.add_argument("--system", action="append", default=None,
                    help="A system prompt. Repeat --system for each one (2 to 5).")

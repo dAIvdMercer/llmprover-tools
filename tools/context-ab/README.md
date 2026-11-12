@@ -36,7 +36,7 @@ model).
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com \u2192 API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com \u2192 API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com \u2192 API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com \u2192 Get API key | `gemini-4-argon` |
 
@@ -55,12 +55,12 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-context-ab
 
 # with vs without context:
-uvx llmprover-context-ab --model gpt-5 \
+uvx llmprover-context-ab --model gpt-5.1 \
     --question "Can I expense a 1,200 USD laptop without approval?" \
     --context-file policy.txt
 
 # context A vs context B:
-uvx llmprover-context-ab --model gpt-5 --mode a-b \
+uvx llmprover-context-ab --model gpt-5.1 --mode a-b \
     --question "What is the refund window?" \
     --context-a-file policy_v1.txt --context-b-file policy_v2.txt
 ```
@@ -72,7 +72,7 @@ git clone https://github.com/dAIvdMercer/llmprover-tools
 cd llmprover-tools/tools/context-ab
 pip install -r requirements.txt
 export OPENAI_API_KEY=sk-...
-python context_ab.py --model gpt-5 --question "..." --context "paste or --context-file"
+python context_ab.py --model gpt-5.1 --question "..." --context "paste or --context-file"
 ```
 
 Key environment variables by provider: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`,

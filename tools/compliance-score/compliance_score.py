@@ -16,7 +16,7 @@ a real reference and draft. Overwrite the defaults with your own.
   python compliance_score.py
 
   # your own (paste inline or from files):
-  python compliance_score.py --model gpt-5 \
+  python compliance_score.py --model gpt-5.1 \
       --reference-file policy.txt --draft-file my_clause.txt
 
 Set the key env var for your model's provider:

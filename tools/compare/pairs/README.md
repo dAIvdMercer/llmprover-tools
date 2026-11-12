@@ -6,9 +6,9 @@ with two models and an everyday (or coding) prompt so you can run a head-to-head
 
 | Notebook | Pre-filled pair (as of 2026-11-02) |
 |----------|------------------------------------|
-| `compare-claude-vs-chatgpt.ipynb` | Claude (`claude-opus-5-5`) vs ChatGPT (`gpt-5`) |
-| `compare-chatgpt-vs-gemini.ipynb` | ChatGPT (`gpt-5`) vs Gemini (`gemini-4-argon`) |
-| `compare-grok-vs-chatgpt.ipynb` | Grok (`grok-4.7`) vs ChatGPT (`gpt-5`) |
+| `compare-claude-vs-chatgpt.ipynb` | Claude (`claude-opus-5-5`) vs ChatGPT (`gpt-5.1`) |
+| `compare-chatgpt-vs-gemini.ipynb` | ChatGPT (`gpt-5.1`) vs Gemini (`gemini-4-argon`) |
+| `compare-grok-vs-chatgpt.ipynb` | Grok (`grok-4.7`) vs ChatGPT (`gpt-5.1`) |
 | `compare-claude-vs-gemini.ipynb` | Claude (`claude-opus-5-5`) vs Gemini (`gemini-4-argon`) |
 | `compare-grok-vs-claude.ipynb` | Grok (`grok-4.7`) vs Claude (`claude-opus-5-5`) |
 | `compare-grok-vs-gemini.ipynb` | Grok (`grok-4.7`) vs Gemini (`gemini-4-argon`) |

@@ -38,7 +38,7 @@ of a cent. You need a key for **each** provider whose model you include.
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o`, `gpt-4o-mini` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o`, `gpt-4o-mini` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 

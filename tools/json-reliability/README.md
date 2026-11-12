@@ -37,7 +37,7 @@ model).
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
@@ -56,12 +56,12 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-json-reliability
 
 # your own: N runs of one request, checked against a schema file:
-uvx llmprover-json-reliability --model gpt-5 --runs 10 \
+uvx llmprover-json-reliability --model gpt-5.1 --runs 10 \
     --prompt "Extract the person's name and age as JSON." \
     --schema-file person.schema.json
 
 # parse-only check (no schema): passes if the response is any valid JSON:
-uvx llmprover-json-reliability --model gpt-5 --runs 10 \
+uvx llmprover-json-reliability --model gpt-5.1 --runs 10 \
     --prompt "Return a JSON array of three colors."
 ```
 

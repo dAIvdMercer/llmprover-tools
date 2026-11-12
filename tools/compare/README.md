@@ -40,7 +40,7 @@ providers. You get one from the provider's website. For example:
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com → API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com → API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com → API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com → Get API key | `gemini-4-argon` |
 
@@ -65,8 +65,8 @@ export ANTHROPIC_API_KEY=sk-ant-...
 uvx llmprover-compare
 
 # your own head-to-head:
-uvx llmprover-compare --models gpt-5,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
-# or:  pipx run llmprover-compare --models gpt-5,claude-opus-5-5 --prompt "..."
+uvx llmprover-compare --models gpt-5.1,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
+# or:  pipx run llmprover-compare --models gpt-5.1,claude-opus-5-5 --prompt "..."
 ```
 
 ### Clone and run
@@ -79,7 +79,7 @@ pip install -r requirements.txt
 export OPENAI_API_KEY=sk-...
 export ANTHROPIC_API_KEY=sk-ant-...
 
-python compare.py --models gpt-5,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
+python compare.py --models gpt-5.1,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
 ```
 
 Key environment variables by provider: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`,

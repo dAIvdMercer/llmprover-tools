@@ -16,7 +16,7 @@ a real source and answer. Overwrite the defaults with your own source, question,
   python faithfulness.py
 
   # your own (paste source inline or from a file):
-  python faithfulness.py --model gpt-5 \
+  python faithfulness.py --model gpt-5.1 \
       --question "Can an employee carry unused leave into next year?" \
       --source-file leave_policy.txt
 

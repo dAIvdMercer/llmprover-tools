@@ -15,10 +15,10 @@ and comment on a real example. Overwrite the defaults with your own question, go
   python gold_check.py
 
   # your own:
-  python gold_check.py --model gpt-5 \
+  python gold_check.py --model gpt-5.1 \
       --question "What is our refund window?" \
       --reference "Refunds are accepted within 14 days of delivery." \
-      --judge-model gpt-5
+      --judge-model gpt-5.1
 
 Set the key env var for your model's provider:
   OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, XAI_API_KEY, TOGETHER_API_KEY, GROQ_API_KEY

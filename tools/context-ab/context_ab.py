@@ -12,11 +12,11 @@ it just shows both answers side by side.
   python context_ab.py
 
   # with vs without context:
-  python context_ab.py --model gpt-5 --question "Can I expense a laptop?" \
+  python context_ab.py --model gpt-5.1 --question "Can I expense a laptop?" \
       --context-file policy.txt
 
   # context A vs context B:
-  python context_ab.py --model gpt-5 --question "What is the refund window?" \
+  python context_ab.py --model gpt-5.1 --question "What is the refund window?" \
       --mode a-b --context-a-file v1.txt --context-b-file v2.txt
 
 Set the key env var for your model's provider:
@@ -58,7 +58,7 @@ def main(argv: list[str] | None = None) -> int:
         description="Ask one model one question two ways (with/without context, or context A/B). "
                     "With no arguments, runs a curated demonstration default."
     )
-    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5.1 (provider inferred).")
     p.add_argument("--question", default=None, help="The question to ask.")
     p.add_argument("--mode", default="with-without", choices=["with-without", "a-b"],
                    help="with-without (default): cold vs with context. a-b: context A vs B.")

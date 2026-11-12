@@ -11,7 +11,7 @@ run slower, for the same answer. The lesson is the token and cost numbers, never
   python prompt_ab.py
 
   # your own two prompts at one model:
-  python prompt_ab.py --model gpt-5 \
+  python prompt_ab.py --model gpt-5.1 \
       --prompt "Summarize this in 3 bullets: ..." \
       --prompt "TL;DR in 3 bullets: ..."
 
@@ -50,7 +50,7 @@ def main(argv=None) -> int:
         description="Run two or more prompts at one model, side by side (token cost + latency, no "
                     "verdict). With no arguments, runs a curated demonstration default."
     )
-    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5 (provider inferred).")
+    p.add_argument("--model", default=None, help="Model id, e.g. gpt-5.1 (provider inferred).")
     p.add_argument("--prompt", action="append", default=None,
                    help="A prompt. Repeat --prompt for each one (2 to 5).")
     p.add_argument("--label", action="append", default=None,

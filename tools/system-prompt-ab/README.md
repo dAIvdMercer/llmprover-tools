@@ -36,7 +36,7 @@ of a cent. You only need **one** provider's key (this tool runs a single model).
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
@@ -55,7 +55,7 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-system-prompt-ab
 
 # your own: one question under two system prompts (repeat --system for each):
-uvx llmprover-system-prompt-ab --model gpt-5 \
+uvx llmprover-system-prompt-ab --model gpt-5.1 \
     --prompt "How do I reset my password?" \
     --system "You are a helpful assistant." \
     --system "You are a support agent. Answer in at most 3 short steps. No preamble."

@@ -11,7 +11,7 @@ and latency side by side. Overwrite the defaults freely with your own models and
     python compare.py
 
     # your own head-to-head:
-    python compare.py --models gpt-5,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
+    python compare.py --models gpt-5.1,claude-opus-5-5 --prompt "Explain CRDTs in one sentence."
 
 Set the key env vars for whichever providers your two models use:
     OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, XAI_API_KEY,
@@ -41,7 +41,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--models",
         default=None,
-        help=f"Exactly two model ids, comma-separated. e.g. gpt-5,claude-opus-5-5 "
+        help=f"Exactly two model ids, comma-separated. e.g. gpt-5.1,claude-opus-5-5 "
              f"(default demo: {DEFAULT_MODELS}).",
     )
     parser.add_argument("--prompt", default=None, help="The prompt to send to both models.")

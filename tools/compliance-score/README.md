@@ -45,7 +45,7 @@ fraction of a cent. You only need **one** provider's key.
 
 | Provider | Where to get a key | Powers models like |
 |----------|--------------------|--------------------|
-| OpenAI | platform.openai.com, API keys | `gpt-5`, `gpt-4o` |
+| OpenAI | platform.openai.com, API keys | `gpt-5.1`, `gpt-4o` |
 | Anthropic | console.anthropic.com, API keys | `claude-opus-5-5` |
 | Google (Gemini) | aistudio.google.com, Get API key | `gemini-4-argon` |
 
@@ -64,7 +64,7 @@ export OPENAI_API_KEY=sk-...
 uvx llmprover-compliance-score
 
 # your own (paste inline or from files):
-uvx llmprover-compliance-score --model gpt-5 \
+uvx llmprover-compliance-score --model gpt-5.1 \
     --reference-file policy.txt --draft-file my_clause.txt
 ```
 
